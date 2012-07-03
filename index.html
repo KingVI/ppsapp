@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <title>Piraten SG AR AI</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="./flagge.png"/>
+        <link rel="stylesheet" href="./themes/pps.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+        <link rel="stylesheet" href="./themes/style.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+        <script type="text/javascript" src="./candidates.js"></script>
+        <script type="text/javascript" src="./news.js"></script>
+        <link rel="stylesheet" href="./add2home/add2home.css">
+        <script type="application/javascript" src="./add2home/add2home.js"></script>
+        <script type="text/javascript">
+<!--
+answ = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+function answer(q, a) {
+    q = q-1;
+    if ( a != 1 ) a = 0;
+    answ[q] = a;
+}
+
+function doResult() {
+    var tx = "";
+    var ct = 0;
+    for (var i = 0; i < 10; ++i) ct = ct + answ[i];
+    
+    if ( i > 0 ) {
+        document.getElementById("end_msg_1").innerHTML = ct+"0% &Uuml;bereinstimmung";
+    } else {
+        document.getElementById("end_msg_1").innerHTML = "keine &Uuml;bereinstimmung";
+    }
+  
+    if (ct > 8) tx = "<p>Du teilst die Anliegen und Ziele der Piratenpartei. Du w&auml;hlst mit Vorteil die Piratenpartei und deren Kandidatinnen und Kandidaten.</p><p>Eigentlich solltest du sogar aktiv bei den Piraten mitmachen. Falls noch nicht geschehen kannst du hier <a href='https://my.piratenpartei.ch/users/create/member/' target='_blank'>Mitglied werden</a>).</p>";
+    if (ct > 5 && ct <= 8) tx = "<p>Du teilst die Anliegen und Ziele der Piratenpartei. Du w&auml;hlst mit Vorteil die Piratenpartei und deren Kandidaten.</p>";
+    if (ct > 2 && ct <= 5) tx = "<p>Du bist durch die Piratenpartei in Teilbereichen gut vertreten, es schadet nicht den einen oder anderen Piraten auf Ihre Liste zu setzen.</p>";
+    if (ct <= 2)           tx = "<p>Wir w&uuml;nschen dir viel Gl&uuml;ck im k&uuml;nftigen &Uuml;berwachungsstaat ohne pers&ouml;nliche Freiheiten.</p>";
+    
+    //Danke?
+    if (ct > 2) {
+        document.getElementById("end_thx").style.display = "inline";
+    } else {
+        document.getElementById("end_thx").style.display = "none";
+    }
+    document.getElementById("end_msg_2").innerHTML = tx;
+}
+
+function preloadPictures() {
+    img = new Image(); img.src = "./photo/alex.jpg";
+}
+
+//-->
+        </script>
+</head>
+<body>
+
+<div data-role="page" id="main">
+
+        <div data-role="content">
+
+               <div align=center><img border="0" src="./logo.png" width="300" height="70" alt="Piraten Partei" /></div>
+                <p>Ahoi!</p>
+                <p>Du interessierst dich f&uuml;r die Piratenpartei? Dann bist du hier richtig. Mache den Piraten-Test und finde heraus wie piratig du bist.</p>
+                <a href="#test" data-role="button">Piraten-Test</a>
+                <p>Schau dir unsere Neuigkeiten an!</p>
+                <a href="#news" data-role="button" onclick="loadNews();">News</a>
+                <p>Bei Fragen stehen wir dir gerne zur Verf&uuml;gung.</p>
+                <a href="#contact" data-role="button">Kontakt</a>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+
+</div><!-- /page -->
+
+<div data-role="page" id="news" data-add-back-btn="true">
+
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>News</h1>
+                <a href="#main" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+
+        <div data-role="content" id="news-items">
+        </div><!-- /content -->
+
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+
+</div><!-- /page -->
+
+<div data-role="page" id="contact" data-add-back-btn="true">
+
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Kontakt</h1>
+                <a href="#main" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+
+        <div data-role="content">
+
+                <h1>Online</h1>
+                <ul data-role="listview">
+                                <li><a href="mailto:info@sg.piratenpartei.ch">E-Mail</a></li>
+                                <li><a href="http://www.facebook.com/pages/Piratenpartei-SG-AR-AI/309088379123685">Facebook</a></li>
+                                <li><a href="http://twitter.com/PiratenSG">Twitter</a></li>
+                                <li><a href="http://sg.piratenpartei.ch/aktuell/stammtisch/">Stammtisch</a></li>
+                </ul>
+
+                <h1>Adresse</h1>
+                Piratenpartei SG AR AI<br />9000 St. Gallen
+
+                <h1>Kontoverbindung</h1>
+                Piratenpartei SG AR AI<br />Kantonalbank St. Gallen<br />IBAN: CH90 0078 1613 4370 3200 0
+
+        </div><!-- /content -->
+
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="test">
+
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test</h1>
+                <a href="#main" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+
+        <div data-role="content">
+                <p>Bist Du auch ein Pirat?</p>
+                <p>Bitte beantworte die folgenden 10 Fragen und finde heraus, ob sich deine politischen Ansichten mit den Positionen der Piratenpartei decken.</p>
+                <p>In zwei Minuten weisst du mehr.</p>
+                <a href="#test_q1" data-role="button">Weiter</a>
+
+        </div><!-- /content -->
+
+       <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+
+</div><!-- /page -->
+
+<div data-role="page" id="test_q1">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 1/10</h1>
+                <a href="#test" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin f&uuml;r den Schutz der Privatsph&auml;re im digitalen und echten Leben.
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_q2" data-role="button" data-inline="true" data-icon="check"  onclick="answer(1, 1)">Ja</a>
+                  <a href="#test_q2" data-role="button" data-inline="true" data-icon="delete" onclick="answer(1, 0)">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_q2">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 2/10</h1>
+                <a href="#test_q1" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin f&uuml;r einen transparenten Staat anstatt gl&auml;sernen B&uuml;rgers.
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_q3" data-role="button" data-inline="true" data-icon="check"  onclick="answer(2, 1)">Ja</a>
+                  <a href="#test_q3" data-role="button" data-inline="true" data-icon="delete" onclick="answer(2, 0)">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_q3">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 3/10</h1>
+                <a href="#test_q2" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin f&uuml;r ein obligatorisches Schulfach "Medienkompetenz" (Jugendschutz).
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_q4" data-role="button" data-inline="true" data-icon="check"  onclick="answer(3, 1)">Ja</a>
+                  <a href="#test_q4" data-role="button" data-inline="true" data-icon="delete" onclick="answer(3, 0)">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_q4">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 4/10</h1>
+                <a href="#test_q3" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin f&uuml;r eine allen zug&auml;ngliche Bildung sowie f&uuml;r ungehinderten Zugriff auf Wissen.
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_q5" data-role="button" data-inline="true" data-icon="check"  onclick="answer(4, 1)">Ja</a>
+                  <a href="#test_q5" data-role="button" data-inline="true" data-icon="delete" onclick="answer(4, 0)">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_q5">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 5/10</h1>
+                <a href="#test_q4" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin f&uuml;r die Trennung von Kirche und Staat.
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_q6" data-role="button" data-inline="true" data-icon="check"  onclick="answer(5, 1)">Ja</a>
+                  <a href="#test_q6" data-role="button" data-inline="true" data-icon="delete" onclick="answer(5, 0)">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_q6">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 6/10</h1>
+                <a href="#test_q5" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin f&uuml;r freie M&auml;rkte (z.B. keine Preisbindung auf dem Buchmarkt).
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_q7" data-role="button" data-inline="true" data-icon="check"  onclick="answer(6, 1)">Ja</a>
+                  <a href="#test_q7" data-role="button" data-inline="true" data-icon="delete" onclick="answer(6, 0)">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_q7">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 7/10</h1>
+                <a href="#test_q6" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin gegen ungezielte, fl&auml;chendeckende Video&uuml;berwachung.
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_q8" data-role="button" data-inline="true" data-icon="check"  onclick="answer(7, 1)">Ja</a>
+                  <a href="#test_q8" data-role="button" data-inline="true" data-icon="delete" onclick="answer(7, 0)">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_q8">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 8/10</h1>
+                <a href="#test_q7" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin gegen die generelle Vorratsspeicherung des SMS-, E-Mail- und Handy-Verkehrs.
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_q9" data-role="button" data-inline="true" data-icon="check"  onclick="answer(8, 1)">Ja</a>
+                  <a href="#test_q9" data-role="button" data-inline="true" data-icon="delete" onclick="answer(8, 0)">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_q9">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 9/10</h1>
+                <a href="#test_q8" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin gegen geheime und automatisierte Zensur des Internets?
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_q10" data-role="button" data-inline="true" data-icon="check"  onclick="answer(9, 1)">Ja</a>
+                  <a href="#test_q10" data-role="button" data-inline="true" data-icon="delete" onclick="answer(9, 0)">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_q10">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test 10/10</h1>
+                <a href="#test_q9" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                Ich bin f&uuml;r ein faires Patentrecht im Sinne der gesamten Gesellschaft und bin gegen Patente auf Lebewesen, Gene, Gesch&auml;ftsideen und Software.
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#test_end" data-role="button" data-inline="true" data-icon="check"  onclick="answer(10, 1); doResult();">Ja</a>
+                  <a href="#test_end" data-role="button" data-inline="true" data-icon="delete" onclick="answer(10, 0); doResult();">Nein</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+<div data-role="page" id="test_end">
+        <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
+                <h1>Piraten-Test Resultat</h1>
+                <a href="#test_q10" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+        </div><!-- /header -->
+        <div data-role="content">
+                <p id="end_msg_1" style="font-weight: bold; text-align: center;"></p>
+                <p id="end_msg_2"></p>
+                <p id="end_thx">Danke f&uuml;rs Mitmachen! Gerne z&auml;hlen wir auf deine Unterst&uuml;tzung bei Wahlen und Abstimmungen. Besonders w&uuml;rde uns dein pers&ouml;nliches Engagement bei der Piratenpartei freuen!</p>
+                <p style="text-align: center;"><a href="http://sg.piratenpartei.ch" target="_blank">Piratenpartei SG AR AI</a></p>
+                <p style="text-align: center;"><a href="http://piratenpartei.ch" target="_blank">Piratenpartei Schweiz</a></p>
+                <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+                  <a href="#main" data-role="button" data-inline="true" data-icon="home">Zur&uuml;ck</a>
+                  <a href="#test" data-role="button" data-inline="true" data-icon="refresh">nochmal</a>
+                </div>
+        </div><!-- /content -->
+        <div data-role="footer" class="footer-docs" data-position="fixed"><p align=center>2012 <a href="http://sg.piratenpartei.ch">Piratenpartei SG AR AI</a></p></div>
+</div><!-- /page -->
+
+</body>
+</html>
