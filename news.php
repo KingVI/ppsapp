@@ -1,1 +1,0 @@
-<?php include("http://sg.piratenpartei.ch"); ?>
