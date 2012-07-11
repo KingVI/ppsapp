@@ -30,15 +30,15 @@ function doResult() {
     for (var i = 0; i < 10; ++i) ct = ct + answ[i];
     
     if ( i > 0 ) {
-        document.getElementById("end_msg_1").innerHTML = ct+"0% &Uuml;bereinstimmung";
+        document.getElementById("end_msg_1").innerHTML = ct+"0% Übereinstimmung";
     } else {
-        document.getElementById("end_msg_1").innerHTML = "keine &Uuml;bereinstimmung";
+        document.getElementById("end_msg_1").innerHTML = "keine Übereinstimmung";
     }
   
-    if (ct > 8) tx = "<p>Du teilst die Anliegen und Ziele der Piratenpartei. Du w&auml;hlst mit Vorteil die Piratenpartei und deren Kandidatinnen und Kandidaten.</p><p>Eigentlich solltest du sogar aktiv bei den Piraten mitmachen. Falls noch nicht geschehen kannst du hier <a href='https://my.piratenpartei.ch/users/create/member/' target='_blank'>Mitglied werden</a>.</p>";
-    if (ct > 5 && ct <= 8) tx = "<p>Du teilst die Anliegen und Ziele der Piratenpartei. Du w&auml;hlst mit Vorteil die Piratenpartei und deren Kandidaten.</p>";
+    if (ct > 8) tx = "<p>Du teilst die Anliegen und Ziele der Piratenpartei. Du wählst mit Vorteil die Piratenpartei und deren Kandidatinnen und Kandidaten.</p><p>Eigentlich solltest du sogar aktiv bei den Piraten mitmachen. Falls noch nicht geschehen kannst du hier <a href='https://my.piratenpartei.ch/users/create/member/' target='_blank'>Mitglied werden</a>.</p>";
+    if (ct > 5 && ct <= 8) tx = "<p>Du teilst die Anliegen und Ziele der Piratenpartei. Du wählst mit Vorteil die Piratenpartei und deren Kandidaten.</p>";
     if (ct > 2 && ct <= 5) tx = "<p>Du bist durch die Piratenpartei in Teilbereichen gut vertreten, es schadet nicht den einen oder anderen Piraten auf Ihre Liste zu setzen.</p>";
-    if (ct <= 2)           tx = "<p>Wir w&uuml;nschen dir viel Gl&uuml;ck im k&uuml;nftigen &Uuml;berwachungsstaat ohne pers&ouml;nliche Freiheiten.</p>";
+    if (ct <= 2)           tx = "<p>Wir wünschen dir viel Glück im künftigen Überwachungsstaat ohne persönliche Freiheiten.</p>";
     
     //Danke?
     if (ct > 2) {
@@ -64,11 +64,11 @@ function preloadPictures() {
 
                <div align=center><img border="0" src="images/logo.png" width="300" height="70" alt="Piraten Partei" /></div>
                 <p>Ahoi!</p>
-                <p>Du interessierst dich f&uuml;r die Piratenpartei? Dann bist du hier richtig. Mache den Piraten-Test und finde heraus wie piratig du bist.</p>
+                <p>Du interessierst dich für die Piratenpartei? Dann bist du hier richtig. Mache den Piraten-Test und finde heraus wie piratig du bist.</p>
                 <a href="#test" data-role="button">Piraten-Test</a>
                 <p>Schau dir unsere Neuigkeiten an!</p>
                 <a href="#news" data-role="button" onclick="loadNews();">News</a>
-                <p>Bei Fragen stehen wir dir gerne zur Verf&uuml;gung.</p>
+                <p>Bei Fragen stehen wir dir gerne zur Verfügung.</p>
                 <a href="#contact" data-role="button">Kontakt</a>
 
         </div><!-- /content -->
@@ -82,7 +82,7 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>News</h1>
-                <a href="#main" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#main" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
 
         <div data-role="content" id="news-items">
@@ -97,7 +97,7 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Kontakt</h1>
-                <a href="#main" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#main" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
 
         <div data-role="content">
@@ -128,7 +128,7 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test</h1>
-                <a href="#main" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#main" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
 
         <div data-role="content">
@@ -147,10 +147,10 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 1/10</h1>
-                <a href="#test" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
-                Ich bin f&uuml;r den Schutz der Privatsph&auml;re im digitalen und echten Leben.
+                Ich bin für den Schutz der Privatsphäre im digitalen und echten Leben.
                 <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
                   <a href="#test_q2" data-role="button" data-inline="true" data-icon="check"  onclick="answer(1, 1)">Ja</a>
                   <a href="#test_q2" data-role="button" data-inline="true" data-icon="delete" onclick="answer(1, 0)">Nein</a>
@@ -163,10 +163,10 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 2/10</h1>
-                <a href="#test_q1" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q1" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
-                Ich bin f&uuml;r einen transparenten Staat anstatt gl&auml;sernen B&uuml;rgers.
+                Ich bin für einen transparenten Staat anstatt gläsernen Bürgers.
                 <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
                   <a href="#test_q3" data-role="button" data-inline="true" data-icon="check"  onclick="answer(2, 1)">Ja</a>
                   <a href="#test_q3" data-role="button" data-inline="true" data-icon="delete" onclick="answer(2, 0)">Nein</a>
@@ -179,10 +179,10 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 3/10</h1>
-                <a href="#test_q2" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q2" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
-                Ich bin f&uuml;r ein obligatorisches Schulfach "Medienkompetenz" (Jugendschutz).
+                Ich bin für ein obligatorisches Schulfach "Medienkompetenz" (Jugendschutz).
                 <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
                   <a href="#test_q4" data-role="button" data-inline="true" data-icon="check"  onclick="answer(3, 1)">Ja</a>
                   <a href="#test_q4" data-role="button" data-inline="true" data-icon="delete" onclick="answer(3, 0)">Nein</a>
@@ -195,10 +195,10 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 4/10</h1>
-                <a href="#test_q3" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q3" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
-                Ich bin f&uuml;r eine allen zug&auml;ngliche Bildung sowie f&uuml;r ungehinderten Zugriff auf Wissen.
+                Ich bin für eine allen zugängliche Bildung sowie für ungehinderten Zugriff auf Wissen.
                 <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
                   <a href="#test_q5" data-role="button" data-inline="true" data-icon="check"  onclick="answer(4, 1)">Ja</a>
                   <a href="#test_q5" data-role="button" data-inline="true" data-icon="delete" onclick="answer(4, 0)">Nein</a>
@@ -211,10 +211,10 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 5/10</h1>
-                <a href="#test_q4" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q4" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
-                Ich bin f&uuml;r die Trennung von Kirche und Staat.
+                Ich bin für die Trennung von Kirche und Staat.
                 <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
                   <a href="#test_q6" data-role="button" data-inline="true" data-icon="check"  onclick="answer(5, 1)">Ja</a>
                   <a href="#test_q6" data-role="button" data-inline="true" data-icon="delete" onclick="answer(5, 0)">Nein</a>
@@ -227,10 +227,10 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 6/10</h1>
-                <a href="#test_q5" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q5" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
-                Ich bin f&uuml;r freie M&auml;rkte (z.B. keine Preisbindung auf dem Buchmarkt).
+                Ich bin für freie Märkte (z.B. keine Preisbindung auf dem Buchmarkt).
                 <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
                   <a href="#test_q7" data-role="button" data-inline="true" data-icon="check"  onclick="answer(6, 1)">Ja</a>
                   <a href="#test_q7" data-role="button" data-inline="true" data-icon="delete" onclick="answer(6, 0)">Nein</a>
@@ -243,10 +243,10 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 7/10</h1>
-                <a href="#test_q6" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q6" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
-                Ich bin gegen ungezielte, fl&auml;chendeckende Video&uuml;berwachung.
+                Ich bin gegen ungezielte, flächendeckende Videoüberwachung.
                 <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
                   <a href="#test_q8" data-role="button" data-inline="true" data-icon="check"  onclick="answer(7, 1)">Ja</a>
                   <a href="#test_q8" data-role="button" data-inline="true" data-icon="delete" onclick="answer(7, 0)">Nein</a>
@@ -259,7 +259,7 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 8/10</h1>
-                <a href="#test_q7" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q7" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
                 Ich bin gegen die generelle Vorratsspeicherung des SMS-, E-Mail- und Handy-Verkehrs.
@@ -275,7 +275,7 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 9/10</h1>
-                <a href="#test_q8" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q8" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
                 Ich bin gegen geheime und automatisierte Zensur des Internets?
@@ -291,10 +291,10 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test 10/10</h1>
-                <a href="#test_q9" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q9" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
-                Ich bin f&uuml;r ein faires Patentrecht im Sinne der gesamten Gesellschaft und bin gegen Patente auf Lebewesen, Gene, Gesch&auml;ftsideen und Software.
+                Ich bin für ein faires Patentrecht im Sinne der gesamten Gesellschaft und bin gegen Patente auf Lebewesen, Gene, Geschäftsideen und Software.
                 <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
                   <a href="#test_end" data-role="button" data-inline="true" data-icon="check"  onclick="answer(10, 1); doResult();">Ja</a>
                   <a href="#test_end" data-role="button" data-inline="true" data-icon="delete" onclick="answer(10, 0); doResult();">Nein</a>
@@ -307,16 +307,16 @@ function preloadPictures() {
         <div data-role="header">
                 <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left jqm-home">Home</a>
                 <h1>Piraten-Test Resultat</h1>
-                <a href="#test_q10" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zur&uuml;ck</a>
+                <a href="#test_q10" data-icon="arrow-l" data-iconpos="notext" data-rel="back">zurück</a>
         </div><!-- /header -->
         <div data-role="content">
                 <p id="end_msg_1" style="font-weight: bold; text-align: center;"></p>
                 <p id="end_msg_2"></p>
-                <p id="end_thx">Danke f&uuml;rs Mitmachen! Gerne z&auml;hlen wir auf deine Unterst&uuml;tzung bei Wahlen und Abstimmungen. Besonders w&uuml;rde uns dein pers&ouml;nliches Engagement bei der Piratenpartei freuen!</p>
+                <p id="end_thx">Danke fürs Mitmachen! Gerne zählen wir auf deine Unterstützung bei Wahlen und Abstimmungen. Besonders würde uns dein persönliches Engagement bei der Piratenpartei freuen!</p>
                 <p style="text-align: center;"><a href="http://sg.piratenpartei.ch" target="_blank">Piratenpartei SG AR AI</a></p>
                 <p style="text-align: center;"><a href="http://piratenpartei.ch" target="_blank">Piratenpartei Schweiz</a></p>
                 <div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
-                  <a href="#main" data-role="button" data-inline="true" data-icon="home">Zur&uuml;ck</a>
+                  <a href="#main" data-role="button" data-inline="true" data-icon="home">Zurück</a>
                   <a href="#test" data-role="button" data-inline="true" data-icon="refresh">nochmal</a>
                 </div>
         </div><!-- /content -->
